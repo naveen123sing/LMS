@@ -1,0 +1,103 @@
+<ul class="menu">
+  <li *ngIf="shouldShowContentProvider && shouldFaculty" [routerLinkActive]="['active']" (click)="navigateTo()"
+    routerLink="/dashboard">
+    <i class="fa-solid fa-table-columns icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Dashboard
+    </span>
+  </li>
+  <li *ngIf="shouldShowContentProvider && shouldFaculty" [routerLinkActive]="['active']" (click)="navigateTo()"
+    routerLink="/contentprovider">
+    <i class="fa-solid fa-clipboard icon_size "></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Content Provider
+    </span>
+  </li>
+  <li *ngIf="shouldShowContentProvider" [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/faculty">
+    <i class="fas fa-users " style="color: black;font-size: 17px;"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Faculty
+    </span>
+  </li>
+  <li [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/user">
+    <i class="fas fa-user icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      User
+    </span>
+  </li>
+  <li [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/editprofile">
+    <i class="fas fa-pen-square icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Edit Profile
+    </span>
+  </li>
+  <li [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/assgined-course">
+    <i class="fa-solid fa-cube icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Assigned-Course
+    </span>
+  </li>
+  <li [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/assgined-course-details">
+    <i class="fa-solid fa-passport icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Assigned-Course-Details
+    </span>
+  </li>
+  <li *ngIf="shouldShowContentProvider" [routerLinkActive]="['active']" (click)="navigateTo()"
+    routerLink="/admin-courses">
+    <i class="fa-solid fa-user-tie icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Admin-Courses
+    </span>
+  </li>
+  <li [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/batchmaster">
+    <i class="fa-solid fa-chess-board icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Batch
+    </span>
+  </li>
+  <li [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/coursemaster">
+    <i class="fa-solid fa-graduation-cap icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Course
+    </span>
+  </li>
+  <li [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/subjectmaster">
+    <i class="fa-solid fa-book icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Subject
+    </span>
+  </li>
+  <li [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/topicmaster">
+    <i class="fa-solid fa-note-sticky icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Topic
+    </span>
+  </li>
+  <li [routerLinkActive]="['active']" (click)="navigateTo()" routerLink="/unitmaster">
+    <i class="fa-solid fa-note-sticky icon_size"></i>
+    <span *ngIf="!isCollapsed" class="menu-item-title">
+      Unit
+    </span>
+  </li>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header [routerLinkActive]="['active']">
+        <mat-panel-title class="menu-item-title px-0">
+          <i class="fa-solid fa-layer-group icon_size"></i>
+          <span *ngIf="!isCollapsed" style="padding-left: 6px;"> Reports</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <li [routerLinkActive]="['active']" routerLink="/reports/userreport" (click)="navigateTo()">
+        <span *ngIf="!isCollapsed" class="menu-item-title sub-menu-lable" style="padding-left: 20px;padding-top: 20px;">
+          User Report
+        </span>
+      </li>
+      <li [routerLinkActive]="['active']" routerLink="/reports/subjectreport" (click)="navigateTo()">
+        <span *ngIf="!isCollapsed" class="menu-item-title sub-menu-lable" style="padding-left: 20px;padding-top: 20px;">
+          Subject Report
+        </span>
+      </li>
+    </mat-expansion-panel>
+  </mat-accordion>
+</ul>

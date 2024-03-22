@@ -1,0 +1,154 @@
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: black;
+  display: flex;
+}
+
+mat-sidenav-container {
+  height: 100%;
+  background-color: #ffffff;
+}
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav {
+  padding-top: 3.5rem;
+  transition: width 0.3s ease;
+  border: 1px solid #e5e5e5;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 4rem;
+  }
+
+  .entry {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+  }
+
+}
+
+// Move the content down so that it won't be hidden by the toolbar
+mat-sidenav-content {
+  padding-top: 5rem !important;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 4rem;
+  }
+}
+
+.expanded {
+  width: 250px;
+}
+
+.mat-drawer {
+  background: #ffffff;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.10);
+}
+
+.mat-dropdown {
+  margin-left: auto;
+}
+
+.toggle-icon {
+  vertical-align: middle;
+  color: #ffffff;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+::ng-deep.mat-mdc-menu-panel {
+  background-color: rgb(255, 255, 255) !important;
+  min-width: 150px !important;
+  margin-top: 8px !important;
+  margin-left: 30px;
+
+}
+
+section {
+  padding: 80px 20px 20px 20px;
+  flex: 1;
+  font-family: 'Rubik', sans-serif;
+}
+
+.user-email {
+  font-size: 10px;
+  margin-left: 5px;
+
+}
+
+.mat-icon {
+  color: white;
+}
+
+.mat-mdc-menu-item {
+  color: #000;
+  min-height: 24px;
+}
+
+.img-fluid {
+  width: 180px;
+}
+
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  @media (max-width: 599px) {
+    height: 64px !important;
+
+    .img-fluid {
+      width: 100px;
+
+    }
+  }
+}
+
+.fa-solid,
+.fas {
+  font-weight: 900;
+  font-size: 20px;
+  margin: 0 10px 0 0;
+}
+
+.notifications-icon {
+  color: coral;
+  margin-right: 10px;
+  font-size: 30px;
+  height: auto;
+  width: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: 8px;
+  left: 23px;
+  background: red;
+  padding: 1px;
+  font-size: 12px;
+}
+
+.account-icon {
+  font-size: 0px;
+  height: auto;
+  width: 35px;
+}
+
+.account {
+  cursor: pointer;
+  display: flex !important;
+  align-items: center;
+}
+
+.mat-drawer-container {
+  color: #000;
+}
+
+.mat-drawer-container[_ngcontent-ng-c1061871022] {
+  background-color: #f5f7fd;
+}

@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="mb-3">
+        <h2>Content Uploads</h2>
+      </div>
+      <div class="mb-3">
+        <label for="browser" class="form-label">Content Name </label>
+        <input type="text" class="form-control" name="browser" id="browser">
+      </div>
+      <div class="mb-3">
+        <label for="browser" class="form-label">Select Batch</label>
+        <select class="form-select Select-Batch" id="sel1" name="sellist">
+          <option>Batch 1</option>
+          <option>Batch 2</option>
+          <option>Batch 3</option>
+          <option>Batch 4</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="browser" class="form-label">Select Subject</label>
+        <select class="form-select Select-Batch" id="sel1" name="sellist">
+          <option>Subject 1</option>
+          <option>Subject 2</option>
+          <option>Subject 3</option>
+          <option>Subject 4</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="browser" class="form-label">Description </label>
+        <textarea type="textarea" class="form-control" name="browser" id="browser"></textarea>
+      </div>
+      <div class="mb-3 d-flex">
+        <div>
+          <input type="file" id="videoInput" (change)="onFileSelected($event)">
+        </div>
+        <div>
+          <button class="btn btn-success" (click)="uploadVideo()">Upload</button>
+        </div>
+        <div class="video_Player ms-3">
+          <video controls #videoPlayer width="220" height="140">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div>
+          <button class="btn-dele ms-3" (click)="deleteVideo()">Delete</button>
+        </div>
+      </div>
+      <!-- </div> -->
+      <div class="mb-3 d-flex justify-content-between">
+        <button class="btn btn-primary btn-clear">Clear</button>
+        <button class="btn btn-primary btn-submit">Submit</button>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

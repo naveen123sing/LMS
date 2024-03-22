@@ -1,0 +1,109 @@
+<div class="container-fluid">
+  <div class="row header-row">
+    <div class="col-xl-6 col-md-6 col-sm-6 d-flex justify-content-start align-items-center p-0">
+      <h3 class="Title mt-1">Courses</h3>
+      <button class="btn add-btn"><i class="fas fa-plus"></i> Add New</button>
+    </div>
+    <div class="col-xl-6 col-md-6 col-sm-6 d-flex justify-content-end p-0 ">
+      <button class="btn-filter">All</button>
+      <button class="btn-filter">Published</button>
+      <button class="btn-filter">Draft</button>
+      <button class="btn-filter">Panding</button>
+    </div>
+    <hr class="m-0">
+  </div>
+  <div class="row m-0">
+    <div class="col-xl-12 d-flex justify-content-end">
+      <div class="d-grid">
+        <label for="Category">Category</label>
+        <select name="" id="category_id">
+          <option value="Html">Html</option>
+          <option value="css">CSS</option>
+          <option value="js">Javascript</option>
+        </select>
+      </div>
+      <div class="d-grid">
+        <label for="short by">Short by</label>
+        <input type="text" name="name" id="">
+      </div>
+      <div class="d-grid">
+        <label for="Date">Date</label>
+        <input type="date" name="name" id="">
+      </div>
+      <div class="d-grid">
+        <label for="Date">Search</label>
+        <input type="search" name="name" id="">
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="card mt-4">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><input type="checkbox" name="" id="" [checked]="isAllSelected()" (change)="toggleAllCheckboxes($event)">
+            </th>
+            <th>Course Title<i class="fa-solid fa-arrow-down-a-z"></i></th>
+            <th>Category</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Action</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of items">
+          <tr>
+            <td><input type="checkbox" name="" id="" [(ngModel)]="item.checked" (change)="toggleCheckbox(item)">
+            </td>
+            <td><img src="../../../assets/images/computer.png" width="50px"> Web Designer Course</td>
+            <td>Front-end developer</td>
+            <td>Teacher Name</td>
+            <td>$199.0</td>
+            <td>May 11,2023 4:30pm</td>
+            <td><button class="tb-btn">Published <i class="fa-solid fa-chevron-down"></i></button></td>
+            <td><button class="view-btn">View Course</button></td>
+            <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" [(ngModel)]="item.checked" (change)="toggleCheckbox(item)">
+            </td>
+            <td><img src="../../../assets/images/computer.png" width="50px"> Web Designer Course</td>
+            <td>Front-end developer</td>
+            <td>Teacher Name</td>
+            <td>$199.0</td>
+            <td>May 11,2023 4:30pm</td>
+            <td><button class="tb-btn-red">Panding <i class="fa-solid fa-chevron-down"></i></button></td>
+            <td><button class="view-btn">View Course</button></td>
+            <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" [(ngModel)]="item.checked" (change)="toggleCheckbox(item)">
+            </td>
+            <td><img src="../../../assets/images/computer.png" width="50px"> Web Designer Course</td>
+            <td>Front-end developer</td>
+            <td>Teacher Name</td>
+            <td>$199.0</td>
+            <td>May 11,2023 4:30pm</td>
+            <td><button class="tb-btn">Published <i class="fa-solid fa-chevron-down"></i></button></td>
+            <td><button class="view-btn">View Course</button></td>
+            <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="" id="" [(ngModel)]="item.checked" (change)="toggleCheckbox(item)">
+            </td>
+            <td><img src="../../../assets/images/computer.png" width="50px"> Web Designer Course</td>
+            <td>Front-end developer</td>
+            <td>Teacher Name</td>
+            <td>$199.0</td>
+            <td>May 11,2023 4:30pm</td>
+            <td><button class="tb-btn">Published <i class="fa-solid fa-chevron-down"></i></button></td>
+            <td><button class="view-btn">View Course</button></td>
+            <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

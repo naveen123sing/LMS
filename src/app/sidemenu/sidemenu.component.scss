@@ -1,0 +1,79 @@
+ul {
+  padding-left: 0px !important;
+
+  li {
+    cursor: pointer;
+    border-bottom: 1px solid #e5e5e5;
+    align-items: center;
+    display: flex;
+    height: 50px;
+    padding: 0 15px;
+  }
+
+  .mat-expansion-panel {
+    background: rgb(255, 255, 255);
+    color: black;
+    cursor: pointer;
+
+    &:not([class*=mat-elevation-z]) {
+      box-shadow: none;
+    }
+
+    .mat-expansion-panel-header-title {
+      color: #313438;
+      font-weight: 400;
+      line-height: 20px;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: .0178571429em;
+    }
+
+    .mat-expansion-panel-header {
+      padding: 0 15px;
+    }
+  }
+}
+
+::ng-deep {
+  .mat-expansion-indicator::after {
+    color: black !important;
+  }
+
+  .mat-expansion-panel-body {
+    padding: 0 0px 16px 0px !important;
+  }
+}
+
+.icon_size {
+  font-size: 22px;
+  color: #313438;
+}
+
+.menu-item-title {
+  font-size: 16px;
+  color: #313438;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .0178571429em;
+  padding-left: 10px;
+  align-items:center;
+}
+
+.sub-menu-lable {
+  padding: 0 0px 16px;
+}
+
+.menu li.active {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #fff;
+}
+
+.menu li {
+  padding: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}

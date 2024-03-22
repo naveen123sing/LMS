@@ -1,0 +1,132 @@
+<div class="row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-2" style="text-align: center;">
+        <label for="browser" class="form-label">Select Topic</label>
+    </div>
+    <div class="col-md-4">
+        <select class="form-select Select-Batch" id="sel1" name="sellist" [(ngModel)]="selectedTopic"
+            (change)="onBatchChange()">
+            <option *ngFor="let Topic of topics" [value]="Topic.topicid">{{ Topic.topicname }}</option>
+        </select>
+    </div>
+    <div class="col-md-4" style="text-align: center;">
+        <div class="card-footer">
+            <button class="btn-submit" [disabled]="!selectedTopic" (click)="saveBatchSubject()">Save</button>
+            <button class="btn-clear" [disabled]="!selectedTopic" (click)="reset()">Reset</button>
+        </div>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Available Unit
+            </div>
+            <div class="card-body">
+                <table mat-table [dataSource]="availableUnits">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggleAvailableSubject() : null"
+                                [checked]="selectionavailableUnits.hasValue() && isAllSelectedAvailableSubject()"
+                                [indeterminate]="selectionavailableUnits.hasValue() && !isAllSelectedAvailableSubject()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selectionavailableUnits.toggle(row) : null"
+                                [checked]="selectionavailableUnits.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Code Column -->
+                    <ng-container matColumnDef="code">
+                        <th mat-header-cell *matHeaderCellDef> Code </th>
+                        <td mat-cell *matCellDef="let element"> {{element.unitcode}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.unitname}} </td>
+                    </ng-container>
+
+                    <!-- Description Column -->
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef> Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.unitdesc}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns; let odd = odd; let even = even"
+                        [class.mat-row-even]="even" [class.mat-row-odd]="odd"
+                        (click)="selectionavailableUnits.toggle(row)">
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 align-self-center text-center arrow-container">
+        <div class="arrow-icon" (click)="assignSubject()">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="arrow-icon" (click)="unassignSubject()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Assigned Unit
+            </div>
+            <div class="card-body">
+                <table mat-table [dataSource]="assignedUnits">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggleAssignedSubject() : null"
+                                [checked]="selectionassignedUnits.hasValue() && isAllSelectedAssignedSubject()"
+                                [indeterminate]="selectionassignedUnits.hasValue() && !isAllSelectedAssignedSubject()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selectionassignedUnits.toggle(row) : null"
+                                [checked]="selectionassignedUnits.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Code Column -->
+                    <ng-container matColumnDef="code">
+                        <th mat-header-cell *matHeaderCellDef> Code </th>
+                        <td mat-cell *matCellDef="let element"> {{element.unitcode}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.unitname}} </td>
+                    </ng-container>
+
+                    <!-- Description Column -->
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef> Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.unitdesc}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns; let odd = odd; let even = even"
+                        [class.mat-row-even]="even" (click)="selectionassignedUnits.toggle(row)">
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>

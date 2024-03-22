@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center">
+    <div class="card login-box">
+      <div class="row">
+        <div class="col-xl-6 col-md-6 p-5">
+          <div class=" text-center">
+            <img class="img-fluid logo" width="50%" style="margin-bottom: 20px;" src="/assets/images/compu_lms_logo.png"
+              alt="compulogo">
+          </div>
+          <div class="col-xl-12 col-md-12 form">
+            <h3 class="header-title">Sign In</h3>
+            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="submit()">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="UserName" formControlName="email">
+              </div>
+              <div class="form-group inner-addon right-addon">
+                <input [type]="showPassword ? 'text' : 'password'" class="form-control" placeholder="Password"
+                  formControlName="password">
+                <div (pointerdown)="showPassword = !showPassword" (pointerup)="showPassword = !showPassword"
+                  (pointerleave)="showPassword = false">
+                  <i alt="show" class="fa fa-eye eye-show" [class.hide]="showPassword"></i>
+                  <i alt="hide" class="fa fa-eye-slash eye-show" [class.hide]="!showPassword"></i>
+                </div>
+              </div>
+              <div>
+                <a href="#!" class="forgot-password">Forgot Password?</a>
+              </div>
+              <div class="form-group btn">
+                <button class="btn-login" [disabled]="!loginForm.valid">
+                  <i class="fa-solid fa-right-to-bracket"></i>
+                  {{'lbllogin' | translate}}
+                </button>
+                <button class="btn-Sign " (click)="goToRegister()"><i class="fa-solid fa-user-plus"></i>Sign Up</button>
+              </div>
+              <!-- <div class="form-group ">
+                                <button class="btn-student btn-block" (click)="goToRegister()"><i class="fa-solid fa-right-to-bracket"></i>Log In</button>
+                                <button class="btn-teacher btn-block" (click)="goToRegister()">Sign Up</button>
+                            </div> -->
+            </form>
+          </div>
+        </div>
+        <div class=" col-xl-6 col-md-6 col-sm-4 image hide-on-mobile"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.card {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+    border: 0px;
+}
+
+.card.active {
+    border-bottom: 3px solid #3085d4 !important;
+    font-weight: 600;
+}
+
+.card i.active {
+    color: #3085d4;
+  }

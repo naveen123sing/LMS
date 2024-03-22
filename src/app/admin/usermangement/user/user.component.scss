@@ -1,0 +1,42 @@
+.card-main {
+  border: 1px solid #fffdfd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-border1 {
+  border: 1px solid #ffffff;
+  border-left: 1px solid #dadada;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-border {
+  border: 1px solid #ffffff;
+  border-left: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-border2 {
+  border: 1px solid #ffffff;
+  border-right: 1px solid #dadada;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-span {
+  display: inline-block;
+  width: 20px;
+  height: 24px;
+  border-radius: 5px;
+}
+.card-text{
+  font-size: 30px;
+  font-weight: bold;
+}
+.card-title{
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.progress{
+  height: 5px;
+}

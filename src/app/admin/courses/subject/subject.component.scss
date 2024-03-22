@@ -1,0 +1,188 @@
+.card {
+  margin: 6% auto;
+  position: relative;
+  /* Login box ko relative position dena important hai */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  height: auto;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  background-color: #d9d9d9 !important;
+}
+
+.card-body {
+  padding: 0px;
+}
+
+.card-footer {
+  background-color: white;
+  border-top: 0px;
+  padding: 0px;
+}
+
+.header-title {
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hr {
+  margin: 0 !important;
+  color: #9b9b9b;
+}
+
+.form-control {
+  position: relative;
+  border-color: #9b9b9b !important;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+  height: 20%;
+  padding: 10px;
+}
+
+.form-label {
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 15px;
+}
+
+.btn-row {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-submit,
+.btn-clear {
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+}
+
+/* Disabled button style */
+.btn-submit[disabled],
+.btn-clear[disabled] {
+  background-color: #dddddd; /* Grey color */
+  color: #666666;
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  background-color: #3085d4;
+  border: none;
+  color: white;
+  margin-right: 15px;
+}
+
+.btn-clear {
+  border-color: #3085d4;
+  background-color: transparent;
+  color: #3085d4;
+  border: 1px solid;
+  margin-left: 15px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 12px;
+}
+
+.Duretion {
+  padding-left: 10px;
+}
+
+.container-row {
+  border: 2px solid #ccc;
+  width: 85%;
+  height: 130px;
+  float: right;
+  overflow-y: scroll;
+  padding: 5px;
+  background-color: white;
+  margin-top: 5px;
+}
+
+label {
+  display: inline-flex;
+  cursor: pointer;
+  font-weight: 400;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+
+.arrow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.arrow-icon {
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #9b9b9b;
+  /* You can change the background color */
+  color: #ffffff;
+  /* You can change the text color */
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-icon:hover {
+  background-color: #0056b3;
+  /* You can change the hover background color */
+}
+
+input[type="checkbox"] + label:before {
+  border: 1px solid #e4e9ed;
+  content: "\00a0";
+  /* No break space */
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 16px;
+  width: 16px;
+  padding: 0;
+  vertical-align: top;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background: #f9d2b1;
+  /*9ab593;*/
+  color: #666;
+  content: "\2713";
+  /* Checkmark*/
+  text-align: center;
+}
+
+input[type="checkbox"]:checked + label {
+  font-weight: 700 !important;
+}
+
+::ng-deep.mdc-checkbox
+  .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate="true"])
+  ~ .mdc-checkbox__background {
+  border-color: black !important;
+}
+
+::ng-deep.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+  color: #000 !important;
+}

@@ -1,0 +1,132 @@
+<div class="row mt-5">
+    <div class="col-md-2"></div>
+    <div class="col-md-2" style="text-align: center;">
+        <label for="browser" class="form-label">Select Unit</label>
+    </div>
+    <div class="col-md-4">
+        <select class="form-select Select-Batch" id="sel1" name="sellist" [(ngModel)]="selectedUnit"
+            (change)="onBatchChange()">
+            <option *ngFor="let Unit of units" [value]="Unit.unitid">{{ Unit.unitname }}</option>
+        </select>
+    </div>
+    <div class="col-md-4" style="text-align: center;">
+        <div class="card-footer">
+            <button class="btn-submit" [disabled]="!selectedUnit" (click)="saveBatchSubject()">Save</button>
+            <button class="btn-clear" [disabled]="!selectedUnit" (click)="reset()">Reset</button>
+        </div>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Available Content
+            </div>
+            <div class="card-body">
+                <table mat-table [dataSource]="availableContents">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggleAvailableSubject() : null"
+                                [checked]="selectionavailableContents.hasValue() && isAllSelectedAvailableSubject()"
+                                [indeterminate]="selectionavailableContents.hasValue() && !isAllSelectedAvailableSubject()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selectionavailableContents.toggle(row) : null"
+                                [checked]="selectionavailableContents.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Code Column -->
+                    <ng-container matColumnDef="code">
+                        <th mat-header-cell *matHeaderCellDef> Code </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contentcode}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contentname}} </td>
+                    </ng-container>
+
+                    <!-- Description Column -->
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef> Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contentdesc}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns; let odd = odd; let even = even"
+                        [class.mat-row-even]="even" [class.mat-row-odd]="odd"
+                        (click)="selectionavailableContents.toggle(row)">
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2 align-self-center text-center arrow-container">
+        <div class="arrow-icon" (click)="assignSubject()">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="arrow-icon" (click)="unassignSubject()">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Assigned Content
+            </div>
+            <div class="card-body">
+                <table mat-table [dataSource]="assignedContents">
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <mat-checkbox (change)="$event ? masterToggleAssignedSubject() : null"
+                                [checked]="selectionassignedContents.hasValue() && isAllSelectedAssignedSubject()"
+                                [indeterminate]="selectionassignedContents.hasValue() && !isAllSelectedAssignedSubject()">
+                            </mat-checkbox>
+                        </th>
+                        <td mat-cell *matCellDef="let row">
+                            <mat-checkbox (click)="$event.stopPropagation()"
+                                (change)="$event ? selectionassignedContents.toggle(row) : null"
+                                [checked]="selectionassignedContents.isSelected(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Code Column -->
+                    <ng-container matColumnDef="code">
+                        <th mat-header-cell *matHeaderCellDef> Code </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contentcode}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contentname}} </td>
+                    </ng-container>
+
+                    <!-- Description Column -->
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef> Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contentdesc}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns; let odd = odd; let even = even"
+                        [class.mat-row-even]="even" (click)="selectionassignedContents.toggle(row)">
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>

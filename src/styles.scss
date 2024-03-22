@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "~font-awesome/css/font-awesome.css";
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+
+
+
+body {
+    background: #f6f9ff;
+    height: 100vh;
+}

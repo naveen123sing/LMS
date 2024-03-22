@@ -1,0 +1,95 @@
+.form-control {
+  position: relative;
+  border-color: #9b9b9b !important;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+  height: 20%;
+  padding: 10PX;
+}
+
+.form-label {
+  font-family: 'Rubik', sans-serif;
+  font-weight: bold;
+  line-height: 2px;
+}
+
+.form-select {
+  border-color: #9b9b9b !important;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#videoInput {
+  width: 70%;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  border-color: #3085D4;
+  color: #3085D4;
+  background-color: white;
+
+}
+.btn-dele{
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  border-color: #3085D4;
+  color: #3085D4;
+  background-color: white;
+}
+
+.btn-row {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-submit,
+.btn-clear {
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  font-size: 16px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 600;
+}
+
+.btn-submit {
+  background-color: #3085D4;
+  border: none;
+  color: white;
+  margin-right: 15px;
+}
+
+.btn-clear {
+  border-color: #3085D4;
+  background-color: transparent;
+  color: #3085D4;
+  border: 1px solid;
+  margin-left: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+}
+
+.upload-btn {
+  height: 75px !important;
+  width: 75px !important;
+}
+
+// #videoInput[_ngcontent-ng-c2513648434] {
+//   height: 75px;
+//   width: 75px;
+// }

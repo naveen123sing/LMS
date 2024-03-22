@@ -1,0 +1,94 @@
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4">
+            <div class="card">
+                <div class="card-body p-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="numbers">
+                                <h3>Manage Subject</h3>
+                            </div>
+                        </div>
+                        <div class="col-4 text-end">
+                            <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-2 col-sm-2 mb-xl-0 mb-4">
+            <div class="card" [class.active]="showSubjectMaster" style="border-bottom: 3px solid; cursor: pointer;"
+                (click)="setActiveComponent('showSubjectMaster')">
+                <div class="card-body text-center">
+                    <span>
+                        <i class="fa-solid fa-user-group" [class.active]="showSubjectMaster"
+                            style="font-size: 25px;"></i>
+                        <i class="fa-solid fa-plus" [class.active]="showSubjectMaster" style="font-size: 25px;"></i>
+                    </span>
+                    <p style="font-size: 20px; margin-bottom: 0px;">Add Subject</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 mb-xl-0 mb-4">
+            <div class="card" [class.active]="showBatchFaculty" style="border-bottom: 3px solid; cursor: pointer;"
+                (click)="setActiveComponent('showBatchFaculty')">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-users d-flex justify-content-center" [class.active]="showBatchFaculty"
+                        style="font-size: 25px;"></i>
+                    <p style="font-size: 20px; margin-bottom: 0px;">Faculty</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 mb-xl-0 mb-4">
+            <div class="card" [class.active]="showBatchDetails" style="border-bottom: 3px solid; cursor: pointer;"
+                (click)="setActiveComponent('showBatchDetails')">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-users-gear d-flex justify-content-center" [class.active]="showBatchDetails"
+                        style="font-size: 25px;"></i>
+                    <p style="font-size: 20px; margin-bottom: 0px;">Details</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 mb-xl-0 mb-4">
+            <div class="card" [class.active]="showAddUser" style="border-bottom: 3px solid; cursor: pointer;"
+                (click)="setActiveComponent('showAddUser')">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-user-plus d-flex justify-content-center" [class.active]="showAddUser"
+                        style="font-size: 25px;"></i>
+                    <p style="font-size: 20px; margin-bottom: 0px;">Add User</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 mb-xl-0 mb-4">
+            <div class="card" [class.active]="showTopic" style="border-bottom: 3px solid; cursor: pointer;"
+                (click)="setActiveComponent('showTopic')">
+                <div class="card-body text-center">
+                    <i class="fa-solid fa-book-open d-flex justify-content-center" [class.active]="showTopic"
+                        style="font-size: 25px;"></i>
+                    <p style="font-size: 20px; margin-bottom: 0px;">Topic</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-sm-2 mb-xl-0 mb-4">
+            <div class="card" [class.active]="showBatchFee" style="border-bottom: 3px solid; cursor: pointer;"
+                (click)="setActiveComponent('showBatchFee')">
+                <div class="card-body text-center">
+                    <i class="fa-brands fa-cc-apple-pay d-flex justify-content-center" [class.active]="showBatchFee"
+                        style="font-size: 25px;"></i>
+                    <p style="font-size: 20px; margin-bottom: 0px;">Batch Fee</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4">
+            <div class="card">
+                <app-topic *ngIf="showTopic"></app-topic>
+            </div>
+        </div>
+    </div>
+</div>

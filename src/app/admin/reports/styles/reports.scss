@@ -1,0 +1,178 @@
+::ng-deep.mat-mdc-option {
+  color: #000 !important;
+
+}
+
+::ng-deep.mat-mdc-select-arrow {
+  color: #000 !important;
+}
+
+::ng-deep.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white !important;
+  border: 1px solid #818183;
+  border-radius: 5px !important;
+
+  .mat-mdc-select-value {
+    color: #000 !important;
+  }
+}
+
+::ng-deep.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+  color: #000 !important;
+}
+
+::ng-deep.cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel {
+  background-color: white !important;
+  border-radius: 5px !important;
+}
+
+
+::ng-deep.cdk-overlay-pane .mat-mdc-option:hover:not(.mat-mdc-option-disabled),
+.cdk-overlay-pane .mat-mdc-option:focus:not(.mat-mdc-option-disabled) {
+  &:hover {
+    background-color: #0d6efd !important;
+    color: #fff !important;
+    transition: background-color 0.3s ease !important;
+  }
+}
+
+::ng-deep.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: #000;
+}
+
+::ng-deep.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: #000;
+}
+
+::ng-deep.mdc-text-field--filled {
+  --mdc-filled-text-field-focus-active-indicator-height: 0 !important;
+}
+
+
+//  Date Picker
+
+::ng-deep.mat-mdc-form-field:not(.mat-form-field-disabled) .mat-mdc-floating-label.mdc-floating-label {
+  color: #000;
+  top: 18px !important;
+}
+
+::ng-deep.mat-mdc-button-base {
+  color: #000;
+}
+
+::ng-deep.mat-date-range-input-container {
+  color: #000;
+}
+
+/* Mat table */
+
+// table {
+//   width: 100%;
+// }
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+// td,
+// th {
+//   width: 25%;
+// }
+
+
+::ng-deep.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: #000 !important;
+}
+
+::ng-deep.mat-mdc-table {
+  background-color: #fff !important;
+
+  .mat-sort-header-content {
+    color: #000 !important;
+  }
+
+  .mat-mdc-cell {
+    color: #000 !important;
+  }
+}
+
+::ng-deep.mat-mdc-paginator {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+::ng-deep.mat-mdc-paginator-icon {
+  fill: black !important;
+}
+
+::ng-deep.mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+::ng-deep.mat-mdc-form-field-flex {
+  height: 42px !important;
+}
+
+::ng-deep.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+/* Add styles for even and odd rows */
+.mat-row-even {
+  background-color: #fff;
+}
+
+.mat-row-odd {
+  background-color: #efefef;
+}
+
+.mat-header {
+  background-color: #dae4e7;
+}
+
+::ng-deep.mat-sort-header-arrow {
+  color: #000 !important;
+}
+
+/* Mat date-picker*/
+
+::ng-deep.mat-datepicker-content {
+  background-color: #fff !important;
+}
+
+::ng-deep.mat-calendar-body-cell-content {
+  color: #000 !important;
+}
+
+::ng-deep.mat-calendar-table-header th {
+  color: #000 !important;
+}
+
+::ng-deep.mat-mdc-button:not(:disabled) {
+  color: #000 !important;
+}
+
+::ng-deep.mat-calendar-body-label {
+  color: #000 !important;
+}
+
+::ng-deep.mat-calendar-arrow {
+  fill: #000 !important;
+}
+
+::ng-deep.mat-calendar-next-button {
+  color: #000 !important;
+}
+
+::ng-deep.mat-calendar-previous-button {
+  color: #000 !important;
+}

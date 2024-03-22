@@ -1,0 +1,129 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row">
+    <div class="col-xl-12 col-md-12 col-sm-12">
+      <h3 class="header">Assgined Course</h3>
+      <hr class="m-0">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <ul class="list">
+        <li class="button" (click)="changeColor('Web Developement')"
+          [ngClass]="{'bg-dark': selectedButton === 'Web Developement', '': selectedButton !== 'Web Developement'}">
+          <a [style.color]="selectedButton === 'Web Developement' ? 'white' : ''">Web Developement</a>
+        </li>
+        <li class="button" (click)="changeColor('Full Stack')"
+          [ngClass]="{'bg-dark': selectedButton === 'Full Stack', '': selectedButton !== 'Full Stack'}">
+          <a [style.color]="selectedButton === 'Full Stack' ? 'white' : ''">Full Stack</a>
+        </li>
+        <li class="button" (click)="changeColor('Database')"
+          [ngClass]="{'bg-dark': selectedButton === 'Database', '': selectedButton !== 'Database'}">
+          <a [style.color]="selectedButton === 'Database' ? 'white' : ''">Database</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <ul class="list">
+        <li class="button" (click)="changeColor('All')"
+          [ngClass]="{'bg-dark': selectedButton === 'All', '': selectedButton !== 'All'}">
+          <a [style.color]="selectedButton === 'All' ? 'white' : ''">All</a>
+        </li>
+        <li class="button" (click)="changeColor('HTML')"
+          [ngClass]="{'bg-dark': selectedButton === 'HTML', '': selectedButton !== 'HTML'}">
+          <a [style.color]="selectedButton === 'HTML' ? 'white' : ''">HTML</a>
+        </li>
+        <li class="button" (click)="changeColor('CSS')"
+          [ngClass]="{'bg-dark': selectedButton === 'CSS', '': selectedButton !== 'CSS'}">
+          <a [style.color]="selectedButton === 'CSS' ? 'white' : ''">CSS</a>
+        </li>
+        <li class="button" (click)="changeColor('JavaScript')"
+          [ngClass]="{'bg-dark': selectedButton === 'JavaScript', '': selectedButton !== 'JavaScript'}">
+          <a [style.color]="selectedButton === 'JavaScript' ? 'white' : ''">JavaScript</a>
+        </li>
+        <li class="button" (click)="changeColor('Php')"
+          [ngClass]="{'bg-dark': selectedButton === 'Php', '': selectedButton !== 'Php'}">
+          <a [style.color]="selectedButton === 'Php' ? 'white' : ''">Php</a>
+        </li>
+        <li class="button" (click)="changeColor('Pythan')"
+          [ngClass]="{'bg-dark': selectedButton === 'Pythan', '': selectedButton !== 'Pythan'}">
+          <a [style.color]="selectedButton === 'Pythan' ? 'white' : ''">Pythan</a>
+        </li>
+        <li class="button" (click)="changeColor('Java')"
+          [ngClass]="{'bg-dark': selectedButton === 'Java', '': selectedButton !== 'Java'}">
+          <a [style.color]="selectedButton === 'Java' ? 'white' : ''">Java</a>
+        </li>
+        <li class="button" (click)="changeColor('C#')"
+          [ngClass]="{'bg-dark': selectedButton === 'C#', '': selectedButton !== 'C#'}">
+          <a [style.color]="selectedButton === 'C#' ? 'white' : ''">C#</a>
+        </li>
+        <li class="button" (click)="changeColor('Bootstrap')"
+          [ngClass]="{'bg-dark': selectedButton === 'Bootstrap', '': selectedButton !== 'Bootstrap'}">
+          <a [style.color]="selectedButton === 'Bootstrap' ? 'white' : ''">Bootstrap</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row align-items-center mt-4">
+    <div class="col-xl-8 col-md-8 col-8 d-flex">
+      <div class="col-xl-6 col-md-6">
+        <div class="card" style="max-width: 35rem;">
+          <video src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" class="card-img-top"
+            controls></video>
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-6">
+        <h5 class="video-title">Video Title Name </h5>
+        <p>Title Descrption for video content</p>
+        <p>Time duretion of video</p>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-4 col-sm-4">
+    </div>
+
+    <div class="col-xl-8 col-md-8 col-8 d-flex mt-4">
+      <div class="col-xl-6 col-md-6">
+        <div class="card" style="max-width: 35rem;">
+          <video src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" class="card-img-top"
+            controls></video>
+        </div>
+      </div>
+      <div class="col-xl-6 col-md-6">
+        <h5 class="video-title">Video Title Name </h5>
+        <p>Title Descrption for video content</p>
+        <p>Time duretion of video</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <form (submit)="uploadVideo($event)">
+                <input type="file" id="videoInput" (change)="onFileSelected($event)" [disabled]="!!selectedVideo">
+                <button type="submit">Upload Video</button>
+            </form>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <video controls #videoPlayer></video>
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <button (click)="deleteVideo()">Delete</button>
+        </div>
+    </div>
+  </div> -->

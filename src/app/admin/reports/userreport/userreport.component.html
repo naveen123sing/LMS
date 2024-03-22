@@ -1,0 +1,146 @@
+<div class="container-fluid">
+  <div class="row mb-1">
+    <div class="col-sm-8 col-md-8">
+      <h3>User Report</h3>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <!-- <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+      </mat-form-field> -->
+      <input type="text" class="form-control" placeholder="Search" aria-label="Search" (keyup)="applyFilter($event)"
+        #input>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-sm-12 col-md-12">
+      <div class="card p-3">
+        <div class="d-flex flex-wrap justify-content-between">
+          <div class="d-flex">
+            <circle-progress [percent]="progress" [radius]="radius" [space]="space"
+              [outerStrokeWidth]="outerStrokeWidth" [outerStrokeColor]="outerStrokeColor"
+              [innerStrokeColor]="innerStrokeColor" [innerStrokeWidth]="innerStrokeWidth" [imageSrc]="imageSrc"
+              [imageHeight]="imageHeight" [imageWidth]="imageWidth" [showImage]="showImage"
+              [showBackground]="showBackground">
+            </circle-progress>
+            <div class="ms-3 align-self-center">
+              <h5>Users</h5>
+              <h5>{{progress}}%</h5>
+            </div>
+          </div>
+          <div class="align-self-center vertical-line">
+            <h5>Assigned Course</h5>
+            <h5>25</h5>
+          </div>
+          <div class="align-self-center vertical-line">
+            <h5>Completed</h5>
+            <h5>15</h5>
+          </div>
+          <div class="align-self-center vertical-line">
+            <h5>In Progress</h5>
+            <h5>3</h5>
+          </div>
+          <div class="align-self-center vertical-line">
+            <h5>Not Started</h5>
+            <h5>7</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-sm-3 col-md-3">
+      <label class="dropdown-label">Organization</label>
+      <mat-form-field class="mt-2">
+        <mat-select [formControl]="selectedorgnazationControl" placeholder="orgnazation">
+          <mat-option *ngFor="let orgnazation of orgnazations" [value]="orgnazation.short">
+            {{orgnazation.full}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+    <div class="col-sm-3 col-md-3">
+      <label class="dropdown-label">Group</label>
+      <mat-form-field class="mt-2">
+        <mat-select [formControl]="selectedgroupControl" placeholder="group">
+          <mat-option *ngFor="let group of groups" [value]="group.short">
+            {{group.full}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-1 col-md-2"></div>
+    <div class="col-sm-3 col-md-3">
+      <mat-form-field class="mt-4 py-2">
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date">
+          <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <button class="btn btn-primary" style="margin-top: 35px;">Submit</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+
+          <!-- Email Column -->
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+            <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+          </ng-container>
+
+          <!-- assignedcourse Column -->
+          <ng-container matColumnDef="assignedcourse">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Assigned Course </th>
+            <td mat-cell *matCellDef="let row"> {{row.assignedcourse}} </td>
+          </ng-container>
+
+          <!-- Completed Column -->
+          <ng-container matColumnDef="completed">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Completed </th>
+            <td mat-cell *matCellDef="let row"> {{row.completed}} </td>
+          </ng-container>
+
+          <!-- Inprogress Column -->
+          <ng-container matColumnDef="inprogress">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Inprogress </th>
+            <td mat-cell *matCellDef="let row"> {{row.inprogress}} </td>
+          </ng-container>
+
+          <!-- Inprogress Column -->
+          <ng-container matColumnDef="notstarted">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Not Started </th>
+            <td mat-cell *matCellDef="let row"> {{row.notstarted}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns; let odd = odd; let even = even"
+            [class.mat-row-even]="even" [class.mat-row-odd]="odd"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[6]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

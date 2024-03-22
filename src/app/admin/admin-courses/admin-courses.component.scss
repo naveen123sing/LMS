@@ -1,0 +1,156 @@
+.header-row {
+  align-items: center;
+  margin: 5px;
+
+}
+
+.add-btn {
+  color: #3085D4;
+  cursor: pointer;
+  margin-left: 10px;
+  display: block;
+  position: relative;
+  border: 1px solid #3085D4;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+
+}
+
+.add-btn:hover {
+  color: white !important;
+  background-color: transparent;
+  text-shadow: nthree;
+}
+
+.add-btn:hover:before {
+  left: 0%;
+  right: auto;
+  width: 100%;
+}
+
+.add-btn:before {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 0px;
+  z-index: -1;
+  content: '';
+  color: white !important;
+  background: #3085D4;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+.btn-filter {
+  background-color: #3498db;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 5px;
+}
+
+.btn-filter:hover {
+  background-color: #2980b9;
+  color: #ecf0f1;
+}
+
+.link1 a {
+  text-decoration: none !important;
+  color: #3085D4 !important;
+}
+
+ul,
+li {
+  list-style-type: none;
+  text-decoration: none;
+  display: inline;
+  margin: 3px;
+  position: relative;
+}
+
+a {
+  color: #9b9b9b;
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px 10px;
+  position: relative;
+}
+
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  top: 36px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #3085D4;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+@media screen and (max-height: 300px) {
+  ul {
+    margin-top: 40px;
+  }
+}
+
+.d-grid {
+  padding: 10px 0px 0px 30px;
+}
+
+.card-header {
+  background-color: #F6F9FF;
+}
+
+table,
+tfoot,
+tr,
+th {
+  border-style: none;
+  background-color: #F6F9FF;
+}
+
+.tb-btn {
+  border-radius: 20px;
+  color: #19BE3D;
+  border: #19BE3D solid 1px;
+  background-color: #E1F3E3;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 3px;
+  width: 120px;
+}
+
+.tb-btn-red {
+  border-radius: 20px;
+  color: #F24343;
+  border: #F24343 solid 1px;
+  background-color: #F9DADA;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 3px;
+  width: 120px;
+}
+
+.view-btn {
+  border-radius: 5px;
+  color: #3085D4;
+  border: #3085D4 solid 1px;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 3px;
+  width: 60px;
+}

@@ -1,0 +1,142 @@
+<div class="container-fluid">
+  <div class="row mb-1">
+    <div class="col-sm-8 col-md-8">
+      <h3>Subject Report</h3>
+    </div>
+    <div class="col-sm-4 col-md-4">
+      <input type="text" class="form-control" placeholder="Search" aria-label="Search" (keyup)="applyFilter($event)"
+        #input>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="card p-3">
+        <div class="d-flex flex-wrap justify-content-between">
+          <div class="d-flex">
+            <circle-progress [percent]="progress" [radius]="radius" [space]="space"
+              [outerStrokeWidth]="outerStrokeWidth" [outerStrokeColor]="outerStrokeColor"
+              [innerStrokeColor]="innerStrokeColor" [innerStrokeWidth]="innerStrokeWidth" [imageSrc]="imageSrc"
+              [imageHeight]="imageHeight" [imageWidth]="imageWidth" [showImage]="showImage"
+              [showBackground]="showBackground">
+            </circle-progress>
+            <div class="ms-3 align-self-center">
+              <h5>Subject</h5>
+              <h5>{{progress}}%</h5>
+            </div>
+          </div>
+          <!-- <div class="align-self-center vertical-line">
+            <h5>Assigned Course</h5>
+            <h5>25</h5>
+          </div>
+          <div class="align-self-center vertical-line">
+            <h5>description</h5>
+            <h5>15</h5>
+          </div>
+          <div class="align-self-center vertical-line">
+            <h5>In Progress</h5>
+            <h5>3</h5>
+          </div>
+          <div class="align-self-center vertical-line">
+            <h5>Not Started</h5>
+            <h5>7</h5>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-sm-3 col-md-3">
+      <label class="dropdown-label">Batch</label>
+      <mat-form-field class="mt-2">
+        <mat-select [formControl]="selectedbatchControl" placeholder="Batch">
+          <mat-option *ngFor="let batch of batches" [value]="batch.full">
+            {{batch.full}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+    <div class="col-sm-3 col-md-3">
+      <label class="dropdown-label">Course</label>
+      <mat-form-field class="mt-2">
+        <mat-select [formControl]="selectedcourseControl" placeholder="Course">
+          <mat-option *ngFor="let course of courses" [value]="course.short">
+            {{course.full}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-1 col-md-2"></div>
+    <div class="col-sm-3 col-md-3">
+      <mat-form-field class="mt-4 py-2">
+        <mat-date-range-input [rangePicker]="picker">
+          <input matStartDate placeholder="Start date">
+          <input matEndDate placeholder="End date">
+        </mat-date-range-input>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-2 col-md-1">
+      <button class="btn btn-primary" style="margin-top: 35px;"> Submit </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+
+          <!-- serial number -->
+          <ng-container matColumnDef="serialNumber">
+            <th mat-header-cell *matHeaderCellDef> S.No. </th>
+            <td mat-cell *matCellDef="let i = index">
+              {{ (dataSource.paginator ? dataSource.paginator.pageIndex : 0) * (dataSource.paginator ?
+              dataSource.paginator.pageSize : 0) + i + 1 }}
+            </td>
+          </ng-container>
+
+          <!-- Id Column -->
+          <ng-container matColumnDef="subjectid">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+            <td mat-cell *matCellDef="let row"> {{row.subjectid}} </td>
+          </ng-container>
+
+          <!-- Code Column -->
+          <ng-container matColumnDef="subjectcode">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Code </th>
+            <td mat-cell *matCellDef="let row"> {{row.subjectcode}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="subjectname">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.subjectname}} </td>
+          </ng-container>
+
+
+          <!-- Description Column -->
+          <ng-container matColumnDef="subjectdesc">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+            <td mat-cell *matCellDef="let row"> {{row.subjectdesc}} </td>
+          </ng-container>
+
+          <!-- Archive Column -->
+          <ng-container matColumnDef="archived">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Archive </th>
+            <td mat-cell *matCellDef="let row"> {{ row.archived?.toString() || 'Null' }} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" class="mat-header"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns; let odd = odd; let even = even"
+            [class.mat-row-even]="even" [class.mat-row-odd]="odd"></tr>
+
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell p-2" colspan="4"> No data matching the filter {{input.value}}</td>
+          </tr>
+        </table>
+        <mat-paginator [pageSizeOptions]="[6]" aria-label="Select page of users"></mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>

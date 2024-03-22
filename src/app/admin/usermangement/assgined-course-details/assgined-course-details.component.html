@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <!-- Page Heading -->
+  <div class="row header">
+    <div class="col-xl-6 col-md-6 col-sm-6">
+      <h1 class="h3 text-gray-800">Subject</h1>
+    </div>
+    <div class="col-xl-6 col-md-6 col-sm-6 d-flex justify-content-end ">
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <ul class="list">
+        <li class="button" (click)="changeColor('All')" (click)="onClickAll()"
+          [ngClass]="{'bg-primary': selectedButton === 'All', '': selectedButton !== 'All'}">
+          <a [style.color]="selectedButton === 'All' ? 'white' : ''">All</a>
+        </li>
+        <li class="button" (click)="changeColor('C')" (click)="onClickSubject(1)"
+          [ngClass]="{'bg-primary': selectedButton === 'C', '': selectedButton !== 'C'}">
+          <a [style.color]="selectedButton === 'C' ? 'white' : ''">C</a>
+        </li>
+        <li class="button" (click)="changeColor('CSS')" (click)="onClickSubject(2)"
+          [ngClass]="{'bg-primary': selectedButton === 'CSS', '': selectedButton !== 'CSS'}">
+          <a [style.color]="selectedButton === 'CSS' ? 'white' : ''">CSS</a>
+        </li>
+        <li class="button" (click)="changeColor('Java')" (click)="onClickSubject(3)"
+          [ngClass]="{'bg-primary': selectedButton === 'Java', '': selectedButton !== 'Java'}">
+          <a [style.color]="selectedButton === 'Java' ? 'white' : ''">Java</a>
+        </li>
+        <li class="button" (click)="changeColor('PHP')" (click)="onClickSubject(4)"
+          [ngClass]="{'bg-primary': selectedButton === 'PHP', '': selectedButton !== 'PHP'}">
+          <a [style.color]="selectedButton === 'PHP' ? 'white' : ''">PHP</a>
+        </li>
+        <li class="button" (click)="changeColor('Maths')" (click)="onClickSubject(5)"
+          [ngClass]="{'bg-primary': selectedButton === 'Maths', '': selectedButton !== 'Maths'}">
+          <a [style.color]="selectedButton === 'Maths' ? 'white' : ''">Maths</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row align-items-center mt-4">
+    <div class="col-md-3 col-3" *ngFor="let content of UserContentData; index as i">
+      <div class="card" style="max-width: 28rem;">
+        <video src="{{content.url}}" class="card-img-top" controls></video>
+        <div class="card-body">
+          <h5 class="card-title">{{content.name}} </h5>
+          <p class="card-text">Descrption</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>

@@ -1,0 +1,91 @@
+.card {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+    border: none;
+}
+
+.heading {
+    padding: 10px;
+}
+
+.mail-card{
+   
+    padding: 0px 15px;
+}
+
+.mailid{
+    font-size: 16px;
+    direction: rtl;
+}
+
+thead, tbody, tfoot, tr, td, th {
+    padding: 3px;
+}
+
+a{
+    text-decoration: none;
+    color: #c0bebe;
+    font-size: 12px;
+}
+
+a:hover{
+    color: #0071B6;
+}
+
+.card-header{
+    display: inline-flex;
+    justify-content: space-between;
+    background-color: white;
+    border: none;
+    padding: 10PX 15px;
+}
+
+.card-body{
+    display: inline-flex;
+    padding: 0px 15px;
+}
+
+.btn-primary{
+    border-color: #0071B6;
+    background-color: white;
+    color: #0071B6;
+}
+
+.btn-primary:hover{
+    background-color: #0071B6;
+    color: white; 
+}
+
+.first-head{
+    color: #7E7E7E;
+    font-size: 16px;
+    font-weight: 500
+}
+
+.fa-solid, .fas {
+    font-weight: 900;
+    font-size: 18px;
+    margin: 0 10px 0 0;
+}
+
+.fa-brands, .fab {
+    font-weight: 400;
+    font-size: 19px;
+    margin: 0 10px 0 0;
+}
+
+.table-striped tbody td {
+   font-size: 14px;
+   border-bottom: hidden;
+}
+
+table{
+    border-collapse: separate;
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 992px) {
+    .image {
+        background-size: cover;
+        background-position: right;
+    }
+}
